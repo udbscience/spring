@@ -3,4 +3,6 @@ steps:
   args: ['install']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/cloudbuildtest-237400/springboot', '.']
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['beta', 'run', 'deploy', 'springboot', '--image', 'gcr.io/cloudbuildtest-237400/springnoot', '--region', 'us-central1-a']  
 images: ['gcr.io/cloudbuildtest-237400/springboot']
