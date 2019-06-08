@@ -1,8 +1,8 @@
 steps:
-- name: 'gcr.io/cloud-builders/mvn'
-  args: ['install']
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/cloudbuildtest-237400/springboot', '.']
+# - name: 'gcr.io/cloud-builders/mvn'
+#   args: ['install']
+# - name: 'gcr.io/cloud-builders/docker'
+#   args: ['build', '-t', 'gcr.io/cloudbuildtest-237400/springboot', '.']
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', 'springboot', '--image', 'gcr.io/cloudbuildtest-237400/springnoot', '--cluster', 'standard-cluster-1', '--cluster-location', 'us-central1-a']  
+  args: ['beta', 'run', 'deploy', 'springboot', '--image', 'gcr.io/cloudbuildtest-237400/springboot', '--cluster', 'standard-cluster-1', '--cluster-location', 'us-central1-a']  
 images: ['gcr.io/cloudbuildtest-237400/springboot']
